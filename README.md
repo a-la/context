@@ -12,8 +12,8 @@ yarn add -E @a-la/context
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-  * [`stream(rules: Rule|Rule[], text: string, eventKeys?: string[])`](#streamrules-ruleruletext-stringeventkeys-string-void)
-    * [`ReturnType`](#returntype)
+- [`async stream(rules: Rule|Rule[], text: string, eventKeys?: string[]): ReturnType`](#async-streamrules-ruleruletext-stringeventkeys-string-returntype)
+  * [`ReturnType`](#returntype)
 - [TODO](#todo)
 - [Copyright](#copyright)
 
@@ -27,7 +27,7 @@ import ALaContext from '@a-la/context'
 
 The context is then passed to the `context` property of `zoroaster` tests suites.
 
-### `stream(`<br/>&nbsp;&nbsp;`rules: Rule|Rule[],`<br/>&nbsp;&nbsp;`text: string,`<br/>&nbsp;&nbsp;`eventKeys?: string[],`<br/>`): void`
+## `async stream(`<br/>&nbsp;&nbsp;`rules: Rule|Rule[],`<br/>&nbsp;&nbsp;`text: string,`<br/>&nbsp;&nbsp;`eventKeys?: string[],`<br/>`): ReturnType`
 
 Creates a `Replaceable` stream according to a rule or set of rules, asynchronously ends it with passed text and returns the outcome.
 
@@ -79,6 +79,8 @@ example/test/spec
 
 🦅  Executed 1 tests.
 ```
+
+The output of the `stream` function is an object described below.
 
 __<a name="returntype">`ReturnType`</a>__: Replaceable instance, string result and events map.
 
