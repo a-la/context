@@ -34,13 +34,14 @@ class ALaContext {
   }
 }
 
+/* documentary types.xml */
 /**
  * @typedef {import('restream').Rule} Rule
  *
- * @typedef {Object} ReturnType
+ * @typedef {Object} ReturnType Replaceable instance, string result and events map.
  * @prop {Object.<string, any[]>} events Emitted events recorded against passed events keys.
- * @prop {string} result The caught output of the stream.
- * @prop {Replaceable} replaceable The instance of the Replaceable stream.
+ * @prop {string} result The caught output of a _Replaceable_ stream as a string.
+ * @prop {Replaceable} replaceable The instance of a _Replaceable_ stream.
  */
 
 module.exports = ALaContext
