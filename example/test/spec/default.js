@@ -10,12 +10,17 @@ const T = {
     const fn = 'test'
     const data = `export function ${fn}() {}`
 
-    const { result, events } = await stream(rule, data, ['exports'])
+    const {
+      result,
+      events,
+      replaceable,
+    } = await stream(rule, data, ['exports'])
     const expected = `module.exports.${fn} = function ${fn}() {}`
     equal(result, expected)
     deepEqual(events, {
       exports: [fn],
     })
+    deepEqual(replaceable.exports, [fn])
   },
 }
 
