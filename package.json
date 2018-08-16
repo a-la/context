@@ -40,10 +40,13 @@
   "homepage": "https://github.com/a-la/context#readme",
   "devDependencies": {
     "alamode": "1.1.0",
-    "documentary": "1.8.2",
+    "documentary": "1.10.0",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "2.1.0"
+    "zoroaster": "2.2.0"
+  },
+  "peerDependencies": {
+    "zoroaster": "2.2.0"
   },
   "dependencies": {
     "catchment": "3.0.0",
