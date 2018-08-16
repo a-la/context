@@ -40,7 +40,13 @@ In the example below, a transform rule is used to replace an `export` statement 
 export const exportFunctionRule = {
   re: / *export function ([$_\w][$_\w\d]*)/gm,
   replacement(_, fn) {
+    // async
     this.emit('exports', fn)
+
+    // sync
+    this.exports = this.exports || []
+    this.exports.push(fn)
+
     return `module.exports.${fn} = function ${fn}`
   },
 }
@@ -61,12 +67,17 @@ const T = {
     const fn = 'test'
     const data = `export function ${fn}() {}`
 
-    const { result, events } = await stream(rule, data, ['exports'])
+    const {
+      result,
+      events,
+      replaceable,
+    } = await stream(rule, data, ['exports'])
     const expected = `module.exports.${fn} = function ${fn}() {}`
     equal(result, expected)
     deepEqual(events, {
       exports: [fn],
     })
+    deepEqual(replaceable.exports, [fn])
   },
 }
 
