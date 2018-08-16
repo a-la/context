@@ -14,6 +14,7 @@ yarn add -E @a-la/context
 - [API](#api)
   * [`stream(rules: Rule|Rule[], text: string, eventKeys?: string[])`](#streamrules-ruleruletext-stringeventkeys-string-void)
     * [`ReturnType`](#returntype)
+- [TODO](#todo)
 - [Copyright](#copyright)
 
 ## API
@@ -30,7 +31,54 @@ The context is then passed to the `context` property of `zoroaster` tests suites
 
 Creates a `Replaceable` stream according to a rule or set of rules, asynchronously ends it with passed text and returns the outcome.
 
-`import('restream').Rule` __<a name="rule">`Rule`</a>__
+In the example below, a transform rule is used to replace an `export` statement with a `module.exports` statement, and emit an `exports` event.
+
+```js
+/**
+ * A rule to replace an `export function` statement with `module.exports`.
+ */
+export const exportFunctionRule = {
+  re: / *export function ([$_\w][$_\w\d]*)/gm,
+  replacement(_, fn) {
+    this.emit('exports', fn)
+    return `module.exports.${fn} = function ${fn}`
+  },
+}
+```
+
+Now, this rule can be tested using the `@a-la/context` and [`zoroaster`](https://github.com/artdecocode/zoroaster) testing framework.
+
+```js
+/* yarn example/ */
+import { equal, deepEqual } from 'zoroaster/assert'
+import ALaContext from '@a-la/context'
+import { exportFunctionRule as rule } from '../../src/rule'
+
+/** @type {Object.<string, (c: ALaContext)>} */
+const T = {
+  context: ALaContext,
+  async 'replaces the export function'({ stream }) {
+    const fn = 'test'
+    const data = `export function ${fn}() {}`
+
+    const { result, events } = await stream(rule, data, ['exports'])
+    const expected = `module.exports.${fn} = function ${fn}() {}`
+    equal(result, expected)
+    deepEqual(events, {
+      exports: [fn],
+    })
+  },
+}
+
+export default T
+```
+
+```
+example/test/spec
+ [32m ✓ [0m replaces the export function
+
+🦅  Executed 1 tests.
+```
 
 __<a name="returntype">`ReturnType`</a>__: Replaceable instance, string result and events map.
 
@@ -40,14 +88,9 @@ __<a name="returntype">`ReturnType`</a>__: Replaceable instance, string result a
 | __result*__ | _string_ | The caught output of a _Replaceable_ stream as a string. | - |
 | __replaceable*__ | _Replaceable_ | The instance of a _Replaceable_ stream. | - |
 
-```js
-/* yarn example/ */
-import context from '@a-la/context'
+## TODO
 
-(async () => {
-  await context()
-})()
-```
+- [ ] Document mask testing.
 
 ## Copyright
 

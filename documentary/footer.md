@@ -1,4 +1,8 @@
 
+## TODO
+
+- [ ] Document mask testing.
+
 ## Copyright
 
 (c) [À La Mode][1] 2018
