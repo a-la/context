@@ -1,0 +1,14 @@
+<types>
+  <import name="Rule" from="restream"/>
+  <type name="ReturnType" desc="Replaceable instance, string result and events map.">
+    <prop type="Object.<string, any[]>" name="events">
+      Emitted events recorded against passed events keys.
+    </prop>
+    <prop string name="result">
+      The caught output of a _Replaceable_ stream as a string.
+    </prop>
+    <prop name="replaceable" type="Replaceable">
+      The instance of a _Replaceable_ stream.
+    </prop>
+  </type>
+</types>
