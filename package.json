@@ -1,6 +1,6 @@
 {
   "name": "@a-la/context",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A test context for @a-la packages.",
   "main": "build",
   "scripts": {
@@ -15,7 +15,7 @@
     "e": "node example",
     "example/": "yarn e example/example.js",
     "build": "yarn-s b doc",
-    "b": "b --source-maps"
+    "b": "alamode src -o build"
   },
   "files": [
     "build"
@@ -26,7 +26,11 @@
   },
   "keywords": [
     "context",
-    "a-la"
+    "a-la",
+    "test context",
+    "contexttesting",
+    "context testing",
+    "zoroaster"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
@@ -35,9 +39,14 @@
   },
   "homepage": "https://github.com/a-la/context#readme",
   "devDependencies": {
+    "alamode": "1.1.0",
     "documentary": "1.8.2",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
     "zoroaster": "2.1.0"
+  },
+  "dependencies": {
+    "catchment": "3.0.0",
+    "restream": "3.1.0"
   }
 }
