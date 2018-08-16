@@ -219,9 +219,9 @@ yarn-s@1.1.0:
   dependencies:
     spawncommand "1.1.0"
 
-zoroaster@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/zoroaster/-/zoroaster-2.2.0.tgz#64d762accc1362fb1c8d47299b3c1ddce2a55d6f"
+zoroaster@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/zoroaster/-/zoroaster-2.2.1.tgz#c5e52403ef9ac5d5aec1618688f5296f93a81928"
   dependencies:
     assert-diff "2.0.3"
     assert-throws "2.1.0"
