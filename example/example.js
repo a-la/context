@@ -1,4 +1,4 @@
-/* yarn example */
+/* yarn example/ */
 import context from '../src'
 
 (async () => {
