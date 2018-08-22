@@ -7,7 +7,10 @@ const LOG = debuglog('@a-la/context')
 /**
  * A context for testing à la transforms which will allow to use its `stream` property.
  */
-class ALaContext {
+               class ALaContext {
+  constructor() {
+    this.config = {}
+  }
   /**
    * Create a Replaceable stream with a given rule or rules.
    * @param {Rule|Rule[]} rules A rule or rules to use.
@@ -19,6 +22,7 @@ class ALaContext {
     if (!text) throw new Error('An input text is required.')
 
     const replaceable = new Replaceable(rules)
+    replaceable.config = this.config
     const events = eventKeys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
     eventKeys.forEach((key) => {
       replaceable.on(key, (data) => {
@@ -32,6 +36,13 @@ class ALaContext {
     const result = await promise
     return { events, result, replaceable }
   }
+  /**
+   * Set the `.config` property of the Replaceable stream.
+   * @param {Object} config
+   */
+  setConfig(config) {
+    this.config = config
+  }
 }
 
 /* documentary types.xml */
@@ -44,4 +55,6 @@ class ALaContext {
  * @prop {Replaceable} replaceable The instance of a _Replaceable_ stream.
  */
 
+
 module.exports = ALaContext
+//# sourceMappingURL=index.js.map
