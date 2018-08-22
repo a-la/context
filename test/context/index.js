@@ -1,6 +1,5 @@
 import { resolve } from 'path'
 import { debuglog } from 'util'
-import { Rule } from '../../src'
 
 const LOG = debuglog('@a-la/context')
 
@@ -39,7 +38,6 @@ export default class Context {
   }
   /**
    * A replacement rule to transform markdown's `__` into `<em/>`
-   * @returns {Rule}
    */
   get strongRule() {
     return {

@@ -68,6 +68,22 @@ const T = {
     const { replaceable } = await stream(rule, d)
     deepEqual(replaceable.match, [d])
   },
+  async 'allows to set config'(_, { stream, setConfig }) {
+    let config
+    const c = {
+      test: true,
+    }
+    setConfig(c)
+    const rule = {
+      re: /(.*)/,
+      replacement() {
+        config = this.config
+      },
+    }
+    const { replaceable } = await stream(rule, 'test')
+    deepEqual(config, c)
+    deepEqual(replaceable.config, c)
+  },
 }
 
 export default T
