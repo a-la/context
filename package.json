@@ -43,10 +43,7 @@
     "documentary": "1.10.0",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "2.2.2"
-  },
-  "peerDependencies": {
-    "zoroaster": "2.2.2"
+    "zoroaster": "2.3.0"
   },
   "dependencies": {
     "catchment": "3.0.0",
