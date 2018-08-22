@@ -1,5 +1,9 @@
 ## 22 August 2018
 
+### 1.1.1
+
+- [dep] Remove `zoroaster` peer dependency, update `zoroaster@2.3`
+
 ### 1.1.0
 
 - [feature] Allow to set `config` on the _Replaceable_ stream instance.
