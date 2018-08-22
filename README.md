@@ -14,6 +14,7 @@ yarn add -E @a-la/context
 - [API](#api)
 - [`async stream(rules: Rule|Rule[], text: string, eventKeys?: string[]): ReturnType`](#async-streamrules-ruleruletext-stringeventkeys-string-returntype)
   * [`ReturnType`](#returntype)
+- [`setConfig(config: Object)`](#setconfigconfig-object-void)
 - [TODO](#todo)
 - [Copyright](#copyright)
 
@@ -100,6 +101,10 @@ __<a name="returntype">`ReturnType`</a>__: Replaceable instance, string result a
 | __events*__ | _Object.<string, any[]>_ | Emitted events recorded against passed events keys. | - |
 | __result*__ | _string_ | The caught output of a _Replaceable_ stream as a string. | - |
 | __replaceable*__ | _Replaceable_ | The instance of a _Replaceable_ stream. | - |
+
+## `setConfig(`<br/>&nbsp;&nbsp;`config: Object,`<br/>`): void`
+
+This method allows to set the `config` property of the _Replaceable_ instance created inside of the `stream` method. Some transform may use `config` for certain functionality, e.g., replacing of the source string in the [`@a-la/import`](https://github.com/a-la/import) transform.
 
 ## TODO
 

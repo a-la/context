@@ -45,8 +45,6 @@ export default class ALaContext {
   }
 }
 
-export { default as makeTestSuite } from './lib/make-test-suite'
-
 /* documentary types.xml */
 /**
  * @typedef {import('restream').Rule} Rule
