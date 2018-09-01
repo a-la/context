@@ -1,6 +1,7 @@
-const { debuglog } = require('util')
-const { Replaceable } = require('restream')
+const { debuglog } = require('util');
+const { Replaceable } = require('restream');
 let Catchment = require('catchment'); if (Catchment && Catchment.__esModule) Catchment = Catchment.default;
+let makeRules = require('@a-la/markers'); if (makeRules && makeRules.__esModule) makeRules = makeRules.default;
 
 const LOG = debuglog('@a-la/context')
 
@@ -21,7 +22,11 @@ const LOG = debuglog('@a-la/context')
   async stream(rules, text, eventKeys = []) {
     if (!text) throw new Error('An input text is required.')
 
-    const replaceable = new Replaceable(rules)
+    const { rules: allRules, markers } = makeRules(
+      Array.isArray(rules) ? rules : [rules],
+    )
+    const replaceable = new Replaceable(allRules)
+    replaceable.markers = markers
     replaceable.config = this.config
     const events = eventKeys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
     eventKeys.forEach((key) => {
