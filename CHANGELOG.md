@@ -1,3 +1,9 @@
+## 1 September
+
+### 1.2.0
+
+- [feature] Attach markers to the instance (w/ cutting/pasting strings).
+
 ## 22 August 2018
 
 ### 1.1.1
