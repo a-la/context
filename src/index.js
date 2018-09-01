@@ -1,6 +1,7 @@
 import { debuglog } from 'util'
 import { Replaceable } from 'restream'
 import Catchment from 'catchment'
+import makeRules from '@a-la/markers'
 
 const LOG = debuglog('@a-la/context')
 
@@ -21,7 +22,11 @@ export default class ALaContext {
   async stream(rules, text, eventKeys = []) {
     if (!text) throw new Error('An input text is required.')
 
-    const replaceable = new Replaceable(rules)
+    const { rules: allRules, markers } = makeRules(
+      Array.isArray(rules) ? rules : [rules],
+    )
+    const replaceable = new Replaceable(allRules)
+    replaceable.markers = markers
     replaceable.config = this.config
     const events = eventKeys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
     eventKeys.forEach((key) => {
