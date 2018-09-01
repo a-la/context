@@ -46,7 +46,7 @@
     "zoroaster": "2.4.0"
   },
   "dependencies": {
-    "@a-la/markers": "1.0.1",
+    "@a-la/markers": "1.0.2",
     "catchment": "3.0.1",
     "erte": "1.1.4",
     "restream": "3.1.1"
