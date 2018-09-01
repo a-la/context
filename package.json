@@ -1,6 +1,6 @@
 {
   "name": "@a-la/context",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A test context for @a-la packages.",
   "main": "build",
   "scripts": {
