@@ -1,4 +1,8 @@
-## 1 September
+## 1 September 2018
+
+### 1.2.3
+
+- [dep] Update markers to include references to new ones.
 
 ### 1.2.2
 
