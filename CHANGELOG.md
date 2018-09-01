@@ -1,8 +1,12 @@
 ## 1 September
 
+### 1.2.1
+
+- [dep] Update markers to mark escapes regular expressions.
+
 ### 1.2.0
 
-- [feature] Attach markers to the instance (w/ cutting/pasting strings).
+- [feature] Attach markers to the instance (w/ cutting/pasting strings and template literals).
 
 ## 22 August 2018
 
