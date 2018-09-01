@@ -1,5 +1,9 @@
 ## 1 September
 
+### 1.2.2
+
+- [dep] Update markers to ensure correct order.
+
 ### 1.2.1
 
 - [dep] Update markers to mark escapes regular expressions.
