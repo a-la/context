@@ -1,3 +1,9 @@
+## 14 March 2019
+
+### 1.2.4
+
+- [package] Don't publish source maps.
+
 ## 1 September 2018
 
 ### 1.2.3
