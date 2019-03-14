@@ -62,4 +62,3 @@ const LOG = debuglog('@a-la/context')
 
 
 module.exports = ALaContext
-//# sourceMappingURL=index.js.map
