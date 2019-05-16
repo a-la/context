@@ -15,6 +15,7 @@ yarn add -E @a-la/context
 - [`async stream(rules: Rule|Rule[], text: string, eventKeys?: string[]): ReturnType`](#async-streamrules-ruleruletext-stringeventkeys-string-returntype)
   * [`ReturnType`](#type-returntype)
 - [`setConfig(config: Object)`](#setconfigconfig-object-void)
+- [`setFile(file: string)`](#setfilefile-string-void)
 - [Copyright](#copyright)
 
 ## API
@@ -109,6 +110,12 @@ __<a name="type-returntype">`ReturnType`</a>__: Replaceable instance, string res
 This method allows to set the `config` property of the _Replaceable_ instance created inside of the `stream` method. Some transform may use `config` for certain functionality, e.g., replacing of the source string in the [`@a-la/import`](https://github.com/a-la/import) transform.
 
 <p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/2.svg?sanitize=true"></a></p>
+
+## `setFile(`<br/>&nbsp;&nbsp;`file: string,`<br/>`): void`
+
+Sets the `file` property on the replaceable stream. This is required by the import transform to find the _package.json_ file of the imported module to check whether it has the `alamode` property so that the `esCheck` can be skipped.
+
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/3.svg?sanitize=true"></a></p>
 
 ## Copyright
 
