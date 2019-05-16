@@ -9,7 +9,8 @@ const LOG = debuglog('@a-la/context')
  * A context for testing à la transforms which will allow to use its `stream` property.
  */
 export default class ALaContext {
-  constructor() {
+  constructor(file) {
+    this.file = file
     this.config = {}
   }
   /**
@@ -28,6 +29,7 @@ export default class ALaContext {
     const replaceable = new Replaceable(allRules)
     replaceable.markers = markers
     replaceable.config = this.config
+    replaceable.file = this.file
     const events = eventKeys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
     eventKeys.forEach((key) => {
       replaceable.on(key, (data) => {
@@ -47,6 +49,9 @@ export default class ALaContext {
    */
   setConfig(config) {
     this.config = config
+  }
+  setFile(file) {
+    this.file = file
   }
 }
 

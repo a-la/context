@@ -1,9 +1,9 @@
-import { equal, ok } from 'zoroaster/assert'
-import ALaContext from '../../src'
+import { equal, ok } from '@zoroaster/assert'
+import ÀLaContext from '../../src'
 
-/** @type {Object.<string, (a: ALaContext)>} */
+/** @type {Object.<string, (a: ÀLaContext)>} */
 const T = {
-  context: ALaContext,
+  context: ÀLaContext,
   async 'attaches markers to the instance'(
     { stream },
   ) {

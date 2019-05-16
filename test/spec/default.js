@@ -1,10 +1,10 @@
-import { equal, deepEqual } from 'zoroaster/assert'
+import { equal, deepEqual } from '@zoroaster/assert'
 import Context from '../context'
-import ALaContext from '../../src'
+import ÀLaContext from '../../src'
 
-/** @type {Object.<string, (c: Context, a: ALaContext)>} */
+/** @type {Object.<string, (c: Context, a: ÀLaContext)>} */
 const T = {
-  context: [Context, ALaContext],
+  context: [Context, ÀLaContext],
   'is a function'() {
     equal(typeof Context, 'function')
   },

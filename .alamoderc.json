@@ -8,5 +8,10 @@
         }
       }
     }
+  },
+  "import": {
+    "alamodeModules": [
+      "@a-la/markers", "catchment", "erte", "restream"
+    ]
   }
 }
