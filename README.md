@@ -102,12 +102,13 @@ __<a name="type-returntype">`ReturnType`</a>__: Replaceable instance, string res
 | __result*__      | <em>string</em>                      | The caught output of a _Replaceable_ stream as a string. |
 | __replaceable*__ | <em>Replaceable</em>                 | The instance of a _Replaceable_ stream.                  |
 
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
 ## `setConfig(`<br/>&nbsp;&nbsp;`config: Object,`<br/>`): void`
 
 This method allows to set the `config` property of the _Replaceable_ instance created inside of the `stream` method. Some transform may use `config` for certain functionality, e.g., replacing of the source string in the [`@a-la/import`](https://github.com/a-la/import) transform.
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## Copyright
 
@@ -118,12 +119,7 @@ This method allows to set the `config` property of the _Replaceable_ instance cr
         <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
       </a>
     </th>
-    <th>© <a href="https://artd.eco">Art Deco</a> for <a href="https://idio.cc">Idio</a> 2019</th>
-    <th>
-      <a href="https://idio.cc">
-        <img src="https://avatars3.githubusercontent.com/u/40834161?s=100" width="100" alt="Idio" />
-      </a>
-    </th>
+    <th>© <a href="https://artd.eco">Art Deco</a> for <a href="https://alamode.cc">À La Mode</a> 2019</th>
     <th>
       <a href="https://www.technation.sucks" title="Tech Nation Visa">
         <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
