@@ -13,9 +13,8 @@ yarn add -E @a-la/context
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
 - [`async stream(rules: Rule|Rule[], text: string, eventKeys?: string[]): ReturnType`](#async-streamrules-ruleruletext-stringeventkeys-string-returntype)
-  * [`ReturnType`](#returntype)
+  * [`ReturnType`](#type-returntype)
 - [`setConfig(config: Object)`](#setconfigconfig-object-void)
-- [TODO](#todo)
 - [Copyright](#copyright)
 
 ## API
@@ -23,10 +22,12 @@ yarn add -E @a-la/context
 The package is available by importing its default function:
 
 ```js
-import ALaContext from '@a-la/context'
+import ÀLaContext from '@a-la/context'
 ```
 
-The context is then passed to the `context` property of `zoroaster` tests suites.
+The context is then passed to the `context` property of _Zoroaster_ tests suites.
+
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/0.svg?sanitize=true"></a></p>
 
 ## `async stream(`<br/>&nbsp;&nbsp;`rules: Rule|Rule[],`<br/>&nbsp;&nbsp;`text: string,`<br/>&nbsp;&nbsp;`eventKeys?: string[],`<br/>`): ReturnType`
 
@@ -56,14 +57,13 @@ export const exportFunctionRule = {
 Now, this rule can be tested using the `@a-la/context` and [`zoroaster`](https://github.com/artdecocode/zoroaster) testing framework.
 
 ```js
-/* yarn example/ */
-import { equal, deepEqual } from 'zoroaster/assert'
-import ALaContext from '@a-la/context'
+import { equal, deepEqual } from '@zoroaster/assert'
+import ÀLaContext from '@a-la/context'
 import { exportFunctionRule as rule } from '../../src/rule'
 
-/** @type {Object.<string, (c: ALaContext)>} */
+/** @type {Object.<string, (c: ÀLaContext)>} */
 const T = {
-  context: ALaContext,
+  context: ÀLaContext,
   async 'replaces the export function'({ stream }) {
     const fn = 'test'
     const data = `export function ${fn}() {}`
@@ -87,31 +87,51 @@ export default T
 
 ```
 example/test/spec
- [32m ✓ [0m replaces the export function
+  ✓  replaces the export function
 
-🦅  Executed 1 tests.
+🦅  Executed 1 test.
 ```
 
 The output of the `stream` function is an object described below.
 
-__<a name="returntype">`ReturnType`</a>__: Replaceable instance, string result and events map.
+__<a name="type-returntype">`ReturnType`</a>__: Replaceable instance, string result and events map.
 
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| __events*__ | _Object.<string, any[]>_ | Emitted events recorded against passed events keys. | - |
-| __result*__ | _string_ | The caught output of a _Replaceable_ stream as a string. | - |
-| __replaceable*__ | _Replaceable_ | The instance of a _Replaceable_ stream. | - |
+|       Name       |                 Type                 |                       Description                        |
+| ---------------- | ------------------------------------ | -------------------------------------------------------- |
+| __events*__      | <em>Object&lt;string, any[]&gt;</em> | Emitted events recorded against passed events keys.      |
+| __result*__      | <em>string</em>                      | The caught output of a _Replaceable_ stream as a string. |
+| __replaceable*__ | <em>Replaceable</em>                 | The instance of a _Replaceable_ stream.                  |
+
 
 ## `setConfig(`<br/>&nbsp;&nbsp;`config: Object,`<br/>`): void`
 
 This method allows to set the `config` property of the _Replaceable_ instance created inside of the `stream` method. Some transform may use `config` for certain functionality, e.g., replacing of the source string in the [`@a-la/import`](https://github.com/a-la/import) transform.
 
-## TODO
-
-- [ ] Document mask testing.
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
 ## Copyright
 
-(c) [À La Mode][1] 2018
+<table>
+  <tr>
+    <th>
+      <a href="https://artd.eco">
+        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+      </a>
+    </th>
+    <th>© <a href="https://artd.eco">Art Deco</a> for <a href="https://idio.cc">Idio</a> 2019</th>
+    <th>
+      <a href="https://idio.cc">
+        <img src="https://avatars3.githubusercontent.com/u/40834161?s=100" width="100" alt="Idio" />
+      </a>
+    </th>
+    <th>
+      <a href="https://www.technation.sucks" title="Tech Nation Visa">
+        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
+          alt="Tech Nation Visa" />
+      </a>
+    </th>
+    <th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th>
+  </tr>
+</table>
 
-[1]: https://alamode.cc
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/-1.svg?sanitize=true"></a></p>

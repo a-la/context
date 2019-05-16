@@ -1,11 +1,10 @@
-/* yarn example/ */
-import { equal, deepEqual } from 'zoroaster/assert'
-import ALaContext from '../../../src'
+import { equal, deepEqual } from '@zoroaster/assert'
+import ÀLaContext from '../../../src'
 import { exportFunctionRule as rule } from '../../src/rule'
 
-/** @type {Object.<string, (c: ALaContext)>} */
+/** @type {Object.<string, (c: ÀLaContext)>} */
 const T = {
-  context: ALaContext,
+  context: ÀLaContext,
   async 'replaces the export function'({ stream }) {
     const fn = 'test'
     const data = `export function ${fn}() {}`

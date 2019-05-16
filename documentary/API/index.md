@@ -1,10 +1,11 @@
-
 ## API
 
 The package is available by importing its default function:
 
 ```js
-import ALaContext from '@a-la/context'
+import ÀLaContext from '@a-la/context'
 ```
 
-The context is then passed to the `context` property of `zoroaster` tests suites.
+The context is then passed to the `context` property of _Zoroaster_ tests suites.
+
+%~%

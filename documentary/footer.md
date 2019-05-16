@@ -1,10 +1,10 @@
-
+<!--
 ## TODO
 
-- [ ] Document mask testing.
+- [ ] Document mask testing. -->
 
 ## Copyright
 
-(c) [À La Mode][1] 2018
+<alamode-footer />
 
-[1]: https://alamode.cc
+%~ -1%
