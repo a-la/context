@@ -1,3 +1,9 @@
+## 14 March 2020
+
+### [1.4.0](https://github.com/a-la/context/compare/v1.3.0...v1.4.0)
+
+- [feature] Set properties on the stream.
+
 ## 16 May 2019
 
 ### [1.3.0](https://github.com/a-la/context/compare/v1.2.4...v1.3.0)

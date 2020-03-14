@@ -1,6 +1,6 @@
 # @a-la/context
 
-[![npm version](https://badge.fury.io/js/%40a-la%2Fcontext.svg)](https://npmjs.org/package/@a-la/context)
+[![npm version](https://badge.fury.io/js/%40a-la%2Fcontext.svg)](https://www.npmjs.com/package/@a-la/context)
 
 `@a-la/context` is a a test context for `@a-la` packages used in [`alamode`](https://alamode.cc) transpiler. It will provide a means to record the result of transforms for given rules, as well as emitted events.
 
@@ -16,6 +16,7 @@ yarn add -E @a-la/context
   * [`ReturnType`](#type-returntype)
 - [`setConfig(config: Object)`](#setconfigconfig-object-void)
 - [`setFile(file: string)`](#setfilefile-string-void)
+- [`setProps(props: !Object)`](#setpropsprops-object-void)
 - [Copyright](#copyright)
 
 ## API
@@ -28,9 +29,11 @@ import ÀLaContext from '@a-la/context'
 
 The context is then passed to the `context` property of _Zoroaster_ tests suites.
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/0.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/0.svg?sanitize=true">
+</a></p>
 
-## `async stream(`<br/>&nbsp;&nbsp;`rules: Rule|Rule[],`<br/>&nbsp;&nbsp;`text: string,`<br/>&nbsp;&nbsp;`eventKeys?: string[],`<br/>`): ReturnType`
+## <code>async <ins>stream</ins>(</code><sub><br/>&nbsp;&nbsp;`rules: Rule|Rule[],`<br/>&nbsp;&nbsp;`text: string,`<br/>&nbsp;&nbsp;`eventKeys?: string[],`<br/></sub><code>): <i>ReturnType</i></code>
 
 Creates a `Replaceable` stream according to a rule or set of rules, asynchronously ends it with passed text and returns the outcome.
 
@@ -103,38 +106,49 @@ __<a name="type-returntype">`ReturnType`</a>__: Replaceable instance, string res
 | __result*__      | <em>string</em>                      | The caught output of a _Replaceable_ stream as a string. |
 | __replaceable*__ | <em>Replaceable</em>                 | The instance of a _Replaceable_ stream.                  |
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/1.svg?sanitize=true">
+</a></p>
 
-## `setConfig(`<br/>&nbsp;&nbsp;`config: Object,`<br/>`): void`
+## <code><ins>setConfig</ins>(</code><sub><br/>&nbsp;&nbsp;`config: Object,`<br/></sub><code>): <i>void</i></code>
 
 This method allows to set the `config` property of the _Replaceable_ instance created inside of the `stream` method. Some transform may use `config` for certain functionality, e.g., replacing of the source string in the [`@a-la/import`](https://github.com/a-la/import) transform.
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/2.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/2.svg?sanitize=true">
+</a></p>
 
-## `setFile(`<br/>&nbsp;&nbsp;`file: string,`<br/>`): void`
+## <code><ins>setFile</ins>(</code><sub><br/>&nbsp;&nbsp;`file: string,`<br/></sub><code>): <i>void</i></code>
 
 Sets the `file` property on the replaceable stream. This is required by the import transform to find the _package.json_ file of the imported module to check whether it has the `alamode` property so that the `esCheck` can be skipped.
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/3.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/3.svg?sanitize=true">
+</a></p>
+
+
+## <code><ins>setProps</ins>(</code><sub><br/>&nbsp;&nbsp;`props: !Object,`<br/></sub><code>): <i>void</i></code>
+
+Assigns properties to the transform stream. The rules will be able to access them via their `this` context.
+
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/4.svg?sanitize=true">
+</a></p>
 
 ## Copyright
 
 <table>
   <tr>
     <th>
-      <a href="https://artd.eco">
-        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+      <a href="https://www.artd.eco">
+        <img width="100" src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png"
+          alt="Art Deco">
       </a>
     </th>
-    <th>© <a href="https://artd.eco">Art Deco</a> for <a href="https://alamode.cc">À La Mode</a> 2019</th>
-    <th>
-      <a href="https://www.technation.sucks" title="Tech Nation Visa">
-        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
-          alt="Tech Nation Visa" />
-      </a>
-    </th>
-    <th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th>
+    <th>© <a href="https://www.artd.eco">Art Deco™</a> for <a href="https://alamode.cc">À La Mode</a> 2020</th>
   </tr>
 </table>
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/-1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/-1.svg?sanitize=true">
+</a></p>

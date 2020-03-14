@@ -17,3 +17,14 @@ This method allows to set the `config` property of the _Replaceable_ instance cr
 Sets the `file` property on the replaceable stream. This is required by the import transform to find the _package.json_ file of the imported module to check whether it has the `alamode` property so that the `esCheck` can be skipped.
 
 %~%
+
+
+```## setProps
+[
+  ["props", "!Object"]
+]
+```
+
+Assigns properties to the transform stream. The rules will be able to access them via their `this` context.
+
+%~%
