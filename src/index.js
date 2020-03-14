@@ -1,9 +1,6 @@
-import { debuglog } from 'util'
 import { Replaceable } from 'restream'
 import Catchment from 'catchment'
 import makeRules from '@a-la/markers'
-
-const LOG = debuglog('@a-la/context')
 
 /**
  * A context for testing à la transforms which will allow to use its `stream` property.
@@ -12,6 +9,7 @@ export default class ALaContext {
   constructor(file) {
     this.file = file
     this.config = {}
+    this.props = null
   }
   /**
    * Create a Replaceable stream with a given rule or rules.
@@ -30,6 +28,7 @@ export default class ALaContext {
     replaceable.markers = markers
     replaceable.config = this.config
     replaceable.file = this.file
+    if (this.props) Object.assign(replaceable, this.props)
     const events = eventKeys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
     eventKeys.forEach((key) => {
       replaceable.on(key, (data) => {
@@ -52,6 +51,13 @@ export default class ALaContext {
   }
   setFile(file) {
     this.file = file
+  }
+  /**
+   * Set properties on the ÀLaMode transform stream.
+   * @param {Object<string, *>} props
+   */
+  setProps(props) {
+    this.props = props
   }
 }
 
